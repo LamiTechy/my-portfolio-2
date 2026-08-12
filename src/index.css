@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0e11;
+  --color-surface: #12161b;
+  --color-text: #edeae3;
+  --color-text-dim: #8b9198;
+  --color-signal-amber: #e8a33d;
+  --color-signal-teal: #3e8e88;
+  --color-signal-red: #c15b4a;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg: #0b0e11;
+  --surface: #12161b;
+  --text: #edeae3;
+  --text-dim: #8b9198;
+  --signal-amber: #e8a33d;
+  --signal-teal: #3e8e88;
+  --signal-red: #c15b4a;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--signal-amber) 25%, transparent);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal-amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- boot sequence ---- */
+
+@keyframes boot-line {
+  0% {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.boot-line {
+  opacity: 0;
+  animation: boot-line 0.5s ease-out forwards;
+}
+
+/* ---- trace line ---- */
+
+@keyframes trace-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal-amber) 60%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.trace-pulse {
+  animation: trace-pulse 2.4s ease-out infinite;
+}
+
+/* ---- terminal cursor ---- */
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1.1s steps(1) infinite;
+}
+
+.map-pin-wrap {
+  background: transparent;
+  border: none;
+}
+
+.map-pin {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--signal-amber);
+  border: 3px solid color-mix(in srgb, var(--signal-amber) 35%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--signal-amber) 60%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .boot-line {
+    opacity: 1;
+    animation: none;
+  }
+  .trace-pulse {
+    animation: none;
+  }
+  .cursor-blink {
+    animation: none;
+    opacity: 1;
+  }
+}
