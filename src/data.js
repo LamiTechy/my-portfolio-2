@@ -2,7 +2,8 @@ export const LINKS = {
   email: 'soyemimujeeb1@gmail.com',
   github: 'https://github.com/lamitechy',
   twitter: 'https://x.com/hiscode_dev',
-  linkedin: null,
+  linkedin: 'https://www.linkedin.com/in/soyemi-mujeeb-7766aa33b',
+  tiktok: 'https://www.tiktok.com/@olayinka_1804',
   resume: '/resume.pdf',
 }
 

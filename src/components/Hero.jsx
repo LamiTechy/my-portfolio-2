@@ -5,7 +5,7 @@ const BOOT_LINES = [
   { delay: 0, text: '> connecting to lamitechy@production... ', status: '[200 OK]' },
   { delay: 0.3, text: '> handshake complete — session established', status: null },
   { delay: 0.6, text: '$ whoami', status: null },
-  { delay: 0.9, text: '  Mujeeb Soyemi — full-stack developer, Nigeria', status: null },
+  { delay: 0.9, text: '  Mujeeb Soyemi (YinkaTheDev) — software developer & tech creator, Lagos', status: null },
   { delay: 1.2, text: '$ ./thesis --one-liner', status: null },
 ]
 
@@ -65,7 +65,7 @@ function Hero() {
         </div>
         <div className="bg-bg p-3">
           <dt className="text-text-dim">region</dt>
-          <dd className="mt-1 text-text">abeokuta, ogun state</dd>
+          <dd className="mt-1 text-text">lagos, nigeria</dd>
         </div>
         <div className="bg-bg p-3">
           <dt className="text-text-dim">availability</dt>
@@ -75,7 +75,7 @@ function Hero() {
 
       <div className="mt-1 border border-t-0 border-surface">
         <p className="border-b border-surface px-3 py-2 font-mono text-xs text-text-dim">
-          ./maps/region.dat — 7.1527°N, 3.3509°E
+          ./maps/region.dat — 6.5244°N, 3.3792°E
         </p>
         <RegionMap />
       </div>

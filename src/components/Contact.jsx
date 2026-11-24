@@ -20,8 +20,17 @@ const COMMANDS = [
     ? [
         {
           cmd: '$ contact --linkedin',
-          label: LINKS.linkedin.replace(/^https?:\/\//, ''),
+          label: LINKS.linkedin.replace(/^https?:\/\/(www\.)?/, ''),
           href: LINKS.linkedin,
+        },
+      ]
+    : []),
+  ...(LINKS.tiktok
+    ? [
+        {
+          cmd: '$ contact --tiktok',
+          label: LINKS.tiktok.replace(/^https?:\/\/(www\.)?/, ''),
+          href: LINKS.tiktok,
         },
       ]
     : []),
@@ -44,7 +53,7 @@ function Contact() {
           <span className="text-text-dim">&gt; whoami</span>
         </p>
         <p className="mt-1 text-text">
-          Mujeeb Soyemi (lamitechy) — full-stack developer, Nigeria
+          Mujeeb Soyemi (YinkaTheDev) — software developer &amp; tech creator, Lagos
         </p>
 
         {COMMANDS.map((item) => (

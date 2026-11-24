@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-const ABEOKUTA = [7.1527, 3.3509]
+const LAGOS = [6.5244, 3.3792]
 
 function RegionMap() {
   const containerRef = useRef(null)
@@ -11,7 +11,7 @@ function RegionMap() {
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
     const map = L.map(containerRef.current, {
-      center: ABEOKUTA,
+      center: LAGOS,
       zoom: 13,
       zoomControl: false,
       scrollWheelZoom: false,
@@ -24,7 +24,7 @@ function RegionMap() {
       maxZoom: 19,
     }).addTo(map)
 
-    L.marker(ABEOKUTA, {
+    L.marker(LAGOS, {
       icon: L.divIcon({
         className: 'map-pin-wrap',
         html: '<span class="map-pin"></span>',
@@ -45,7 +45,7 @@ function RegionMap() {
       ref={containerRef}
       className="h-64 w-full"
       role="img"
-      aria-label="Map showing Abeokuta, Ogun State, Nigeria"
+      aria-label="Map showing Lagos, Nigeria"
     />
   )
 }
